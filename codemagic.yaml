@@ -11,10 +11,13 @@ workflows:
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
       
-      - name: Update packages
+      - name: Update package lists
         script: |
-          sudo apt-get update
-          sudo apt-get install -y protobuf-compiler
+          sudo apt-get update || echo "Failed to update package lists"
+      
+      - name: Install protobuf-compiler
+        script: |
+          sudo apt-get install -y protobuf-compiler || echo "Failed to install protobuf-compiler"
       
       - name: Set up Protobuf
         script: |
