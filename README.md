@@ -28,7 +28,7 @@ bilimiao原为哔哩哔哩时光机，原始功能主要为查看各个分区在
 2. 从[GithubRelease](https://github.com/10miaomiao/bilimiao2/releases)下载
 3. 从[GiteeRelease](https://gitee.com/10miaomiao/bilimiao2/releases)下载
 #### 使用说明
-1. [手表使用说明](doc/手表使用说明.md)
+1. [手表使用说明](doc/手表使用说明.md)222
 2. [时光机](doc/时光机.md)
 3. [列表屏蔽关键字及up主屏蔽](doc/列表屏蔽关键字及up主屏蔽.md)
 4. [区域限制-代理服务器设置](doc/区域限制-代理服务器设置.md)
