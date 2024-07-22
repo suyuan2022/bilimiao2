@@ -1,19 +1,19 @@
 workflows:
-  android-workflow:
-    name: Android Workflow
+  android-app:
+    name: Bilimiao2 Android App
     max_build_duration: 60
     environment:
       vars:
-        PROJECT_DIR: "." # Project root
-        ANDROID_BUILD_DIR: "$PROJECT_DIR/app/build"
+        PACKAGE_NAME: "com.a985.bilimiao2"  # 为bilimiao2项目设置的包名
     scripts:
-      - name: Set Gradle executable permissions
+      - name: Set up local properties
         script: |
-          cd $PROJECT_DIR
-          chmod +x ./gradlew
-      - name: Build with Gradle
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+      - name: Set execution permission to Gradle
         script: |
-          cd $PROJECT_DIR
-          ./gradlew clean assembleRelease
+          chmod +x gradlew
+      - name: Build Android app
+        script: |
+          ./gradlew assembleRelease
     artifacts:
-      - $ANDROID_BUILD_DIR/outputs/**/*.apk
+      - app/build/outputs/**/*.apk
