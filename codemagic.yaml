@@ -3,8 +3,6 @@ workflows:
     name: Bilimiao2 Android App
     max_build_duration: 120
     environment:
-      android_signing:
-        - keystore_reference
       vars:
         PACKAGE_NAME: "com.a985.bilimiao2"
       java: 11
@@ -34,12 +32,7 @@ workflows:
       - name: Build Android app
         script: |
           ./gradlew clean
-          ./gradlew assembleRelease --stacktrace --info
+          ./gradlew assembleDebug --stacktrace --info
     
     artifacts:
       - app/build/outputs/**/*.apk
-    
-    publishing:
-      email:
-        recipients:
-          - user@example.com
