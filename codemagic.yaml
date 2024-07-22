@@ -7,10 +7,6 @@ workflows:
         PROJECT_DIR: "." # Project root
         ANDROID_BUILD_DIR: "$PROJECT_DIR/app/build"
     scripts:
-      - name: Install dependencies
-        script: |
-          echo y | sdkmanager "ndk;21.0.6113669"
-          sdkmanager "platform-tools" "platforms;android-29" "build-tools;29.0.3"
       - name: Build with Gradle
         script: |
           cd $PROJECT_DIR
