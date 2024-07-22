@@ -633,7 +633,7 @@ class UserFragment : Fragment(), DIAware, MyPage {
                 }..lParams(matchParent, wrapContent)
 
                 // 推荐
-                isShow = viewModel.dataInfo?.like_archive?.count ?: 0 > 0
+                isShow = false // 禁用推荐视频的显示
                 +mediaTitleView(
                     title = "${subject}推荐的",
                     isShow = isShow,
